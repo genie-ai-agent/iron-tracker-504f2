@@ -1,0 +1,107 @@
+---
+const ranges = [
+  { marker: "Ferritin", unit: "ng/mL", deficient: "under 30", aim: "50–150", note: "Iron stores. The number that moves last." },
+  { marker: "Hemoglobin", unit: "g/dL", deficient: "under 12 (women)", aim: "12–16", note: "Oxygen carrying. Moves in 3–4 weeks." },
+  { marker: "Transferrin sat.", unit: "%", deficient: "under 20", aim: "20–50", note: "Iron in transit right now." },
+];
+
+const absorption = [
+  {
+    title: "Every other day, not daily",
+    body: "A dose spikes hepcidin, which blocks the next one for roughly a day. Alternating days absorbs more total iron with less nausea.",
+  },
+  {
+    title: "Vitamin C with it",
+    body: "Ascorbic acid or a glass of orange juice keeps iron in the form the gut can take up.",
+  },
+  {
+    title: "Two hours from coffee, tea, calcium",
+    body: "Tannins, calcium, dairy and antacids all bind iron in the gut. PPIs cut absorption too.",
+  },
+  {
+    title: "Empty stomach if you can stand it",
+    body: "Better absorbed, harder on the stomach. Bisglycinate is the gentler form if sulfate is rough.",
+  },
+  {
+    title: "Ask about IV iron when stores are very low",
+    body: "One or two infusions replace the whole deficit in weeks instead of six-plus months of pills.",
+  },
+  {
+    title: "Recheck, don't guess",
+    body: "Ferritin and hemoglobin about 8–12 weeks in. Hair regrowth lags the bloodwork by months.",
+  },
+];
+
+const causes = [
+  "Heavy periods — the most common cause by a wide margin, and very treatable",
+  "Celiac disease or another malabsorption problem",
+  "H. pylori infection or low stomach acid",
+  "Long-term PPI / antacid use",
+  "GI bleeding, ulcers, or regular NSAID use",
+  "Blood donation, pregnancy, endurance training, a low-iron diet",
+];
+---
+
+<section id="reference" class="rule-top mx-auto max-w-5xl px-5 py-12 sm:py-16">
+  <p class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+    Reference
+  </p>
+  <h2 class="mt-2 text-2xl sm:text-3xl">What the numbers mean, and how to move them</h2>
+
+  <div class="mt-8 overflow-x-auto">
+    <table class="w-full min-w-[34rem] border-collapse text-sm">
+      <thead>
+        <tr class="border-b border-foreground/20 text-left">
+          <th class="py-2 pr-4 font-semibold">Marker</th>
+          <th class="py-2 pr-4 font-semibold">Deficient</th>
+          <th class="py-2 pr-4 font-semibold">Usually aimed for</th>
+          <th class="py-2 font-semibold">What it tells you</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          ranges.map((r) => (
+            <tr class="border-b border-border">
+              <td class="py-3 pr-4 font-display text-base">
+                {r.marker} <span class="text-xs text-muted-foreground">{r.unit}</span>
+              </td>
+              <td class="tabular py-3 pr-4">{r.deficient}</td>
+              <td class="tabular py-3 pr-4">{r.aim}</td>
+              <td class="py-3 text-muted-foreground">{r.note}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+    {
+      absorption.map((a, i) => (
+        <div>
+          <p class="font-display text-sm text-primary">{String(i + 1).padStart(2, "0")}</p>
+          <h3 class="mt-1 text-lg">{a.title}</h3>
+          <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-14 border border-foreground/15 bg-card p-6 sm:p-8">
+    <h3 class="text-xl">Find the leak</h3>
+    <p class="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+      Low iron is a symptom, not a diagnosis. Refilling the tank without plugging the hole means
+      you're back here in a year, so the cause workup matters as much as the dose.
+    </p>
+    <ul class="mt-5 space-y-2.5 text-sm">
+      {
+        causes.map((c) => (
+          <li class="flex gap-3">
+            <span class="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-primary"></span>
+            <span>{c}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

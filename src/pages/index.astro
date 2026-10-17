@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import App from "@/components/App.tsx";
+import Reference from "@/components/Reference.astro";
+---
+
+<Layout
+  title="Ferritin — an iron deficiency log"
+  description="Track ferritin, hemoglobin and transferrin saturation over time, log symptoms and iron doses, and see whether the numbers are actually moving."
+>
+  <div class="paper min-h-screen">
+    <App client:load />
+    <Reference />
+    <footer class="rule-top mx-auto max-w-5xl px-5 py-10 text-xs leading-relaxed text-muted-foreground">
+      <p class="max-w-2xl">
+        Informational only, and not medical advice. Reference ranges differ between labs, and dosing
+        decisions belong with your own clinician. Bring the chart to the appointment; don't let it
+        replace one.
+      </p>
+      <p class="mt-3 font-display text-sm text-foreground">Ferritin &middot; a private iron log</p>
+    </footer>
+  </div>
+</Layout>
