@@ -86,7 +86,7 @@ export default function App() {
           <FerritinChart labs={labs} loading={loadingData} />
 
           <section className="rule-top mt-14 pt-10">
-            <div className="grid gap-10 lg:grid-cols-[22rem_1fr]">
+            <div className="grid min-w-0 gap-10 lg:grid-cols-[22rem_1fr]">
               <LabForm onSaved={loadData} />
               <LabTable labs={labs} loading={loadingData} onChanged={loadData} />
             </div>

@@ -25,7 +25,7 @@ export default function LabTable({
   };
 
   return (
-    <div>
+    <div className="min-w-0">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h2 className="text-xl">Lab history</h2>
         <span className="text-xs text-muted-foreground">

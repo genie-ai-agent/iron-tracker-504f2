@@ -45,7 +45,7 @@ export default function SymptomCheckin({
       </div>
 
       <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_22rem]">
-        <form onSubmit={submit} className="border border-foreground/15 bg-card p-5 sm:p-6">
+        <form onSubmit={submit} className="min-w-0 border border-foreground/15 bg-card p-5 sm:p-6">
           <label className="flex flex-wrap items-center gap-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
             Date
             <input
@@ -100,7 +100,7 @@ export default function SymptomCheckin({
           <p className="mt-2 text-[0.7rem] text-muted-foreground">0 none &middot; 2 moderate &middot; 4 severe</p>
         </form>
 
-        <div>
+        <div className="min-w-0">
           <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
             Last 14 check-ins
           </h3>

@@ -72,7 +72,7 @@ export default function DoseLog({
       </div>
 
       <div className="mt-5 grid gap-10 lg:grid-cols-[22rem_1fr]">
-        <form onSubmit={submit} className="border border-foreground/15 bg-card p-5 sm:p-6">
+        <form onSubmit={submit} className="min-w-0 border border-foreground/15 bg-card p-5 sm:p-6">
           <label className="block">
             <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Date</span>
             <input type="date" required value={takenOn} max={today()} onChange={(e) => setTakenOn(e.target.value)} className={field} />
@@ -112,7 +112,7 @@ export default function DoseLog({
           </p>
         </form>
 
-        <div>
+        <div className="min-w-0">
           <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
             Last 28 days
           </h3>

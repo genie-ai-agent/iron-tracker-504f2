@@ -54,7 +54,7 @@ export default function LabForm({ onSaved }: { onSaved: () => Promise<void> }) {
   };
 
   return (
-    <form onSubmit={submit} className="border border-foreground/15 bg-card p-5 sm:p-6">
+    <form onSubmit={submit} className="min-w-0 border border-foreground/15 bg-card p-5 sm:p-6">
       <h2 className="text-xl">Add a blood draw</h2>
       <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
         Whatever the panel reported. Blank fields are simply left out.
